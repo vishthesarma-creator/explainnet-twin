@@ -1,0 +1,55 @@
+{
+  "version": "recovery_v1",
+  "permitted_pairs": [
+    "critical",
+    "bulk"
+  ],
+  "families": [
+    "no_change",
+    "reroute",
+    "shape_background",
+    "restore_qos"
+  ],
+  "background_endpoints": [
+    "h5",
+    "h6"
+  ],
+  "background_limit_bps": 80000000,
+  "approved_qos": {
+    "direction": "s3->s5",
+    "critical_rate_bps": 3000000,
+    "critical_ceil_bps": 4000000,
+    "bulk_rate_bps": 16000000,
+    "bulk_ceil_bps": 20000000,
+    "source_host": "h1",
+    "target_host": "h3"
+  },
+  "service": {
+    "max_rtt_ms": 20,
+    "max_loss_fraction": 0.02,
+    "max_jitter_ms": 5,
+    "minimum_delivered_fraction": 0.9
+  },
+  "weights": {
+    "rtt": 1,
+    "loss": 1,
+    "jitter": 0.25,
+    "demand": 1
+  },
+  "costs": {
+    "no_change": 0,
+    "reroute": 0.02,
+    "shape_background": 0.08,
+    "restore_qos": 0.04
+  },
+  "meaningful_margin": 0.05,
+  "practical_tie": 0.03,
+  "uncertainty_floor": 0.02,
+  "protected_rate_degradation": 0.15,
+  "protected_loss_increase": 0.03,
+  "max_repairs": 3,
+  "max_repetitions": 3,
+  "max_hypotheses": 2,
+  "max_duration_s": 20,
+  "max_job_s": 700
+}

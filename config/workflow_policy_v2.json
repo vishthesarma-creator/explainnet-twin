@@ -1,0 +1,18 @@
+{
+  "version": "workflow_v2",
+  "action_policy_hash": "595850137825f1d4cb4eecaf4104c445472c4e747af222eb05e0c71ad106505b",
+  "original_families": [
+    "reroute"
+  ],
+  "default_mode": "recommend",
+  "persistence_windows": 2,
+  "verification_windows": 2,
+  "window_s": 10,
+  "settle_s": 2,
+  "cooldown_s": 120,
+  "max_attempts_per_incident": 2,
+  "max_workflow_s": 900,
+  "max_action_s": 150,
+  "auto_requires_model": true,
+  "explicit_observed_only_lab_exception": true
+}

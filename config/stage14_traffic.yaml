@@ -1,0 +1,5 @@
+schema_version: 1
+config_version: recovery_observation_v1
+profiles:
+  - {schema_version: 1, profile_id: critical, source_host: h1, target_host: h3, protocol: udp, offered_bps: 8000000, duration_s: 900, warmup_s: 3, packet_size: 1200, stream_receiver: true}
+  - {schema_version: 1, profile_id: bulk, source_host: h2, target_host: h4, protocol: udp, offered_bps: 5000000, duration_s: 900, warmup_s: 3, packet_size: 1200, stream_receiver: true}

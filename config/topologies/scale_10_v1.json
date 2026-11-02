@@ -1,0 +1,200 @@
+{
+  "address_pool": "10.80.0.0/16",
+  "config_version": "scale_10_v1",
+  "hosts": [
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 1,
+      "host_id": "h1",
+      "role": "critical_client",
+      "switch_id": "s1"
+    },
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 2,
+      "host_id": "h2",
+      "role": "bulk_client",
+      "switch_id": "s1"
+    },
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 3,
+      "host_id": "h3",
+      "role": "critical_receiver",
+      "switch_id": "s5"
+    },
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 4,
+      "host_id": "h4",
+      "role": "bulk_receiver",
+      "switch_id": "s5"
+    },
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 5,
+      "host_id": "h5",
+      "role": "background_sender",
+      "switch_id": "s2"
+    },
+    {
+      "access_bps": 100000000,
+      "access_delay_ms": 0,
+      "address_offset": 6,
+      "host_id": "h6",
+      "role": "background_receiver",
+      "switch_id": "s3"
+    }
+  ],
+  "links": [
+    {
+      "forward_bps": 100000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 100000000,
+      "reverse_delay_ms": 1,
+      "source": "s1",
+      "target": "s2"
+    },
+    {
+      "forward_bps": 100000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 100000000,
+      "reverse_delay_ms": 1,
+      "source": "s2",
+      "target": "s3"
+    },
+    {
+      "forward_bps": 20000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 20000000,
+      "reverse_delay_ms": 1,
+      "source": "s3",
+      "target": "s5"
+    },
+    {
+      "forward_bps": 100000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 100000000,
+      "reverse_delay_ms": 1,
+      "source": "s1",
+      "target": "s4"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s4",
+      "target": "s6"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s6",
+      "target": "s7"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s7",
+      "target": "s8"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s8",
+      "target": "s9"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s9",
+      "target": "s10"
+    },
+    {
+      "forward_bps": 30000000,
+      "forward_delay_ms": 1,
+      "reverse_bps": 30000000,
+      "reverse_delay_ms": 1,
+      "source": "s10",
+      "target": "s5"
+    }
+  ],
+  "pairs": [
+    {
+      "default_path": "primary",
+      "pair_id": "critical",
+      "paths": {
+        "alternative": [
+          "s1",
+          "s4",
+          "s6",
+          "s7",
+          "s8",
+          "s9",
+          "s10",
+          "s5"
+        ],
+        "primary": [
+          "s1",
+          "s2",
+          "s3",
+          "s5"
+        ]
+      },
+      "source_host": "h1",
+      "target_host": "h3"
+    },
+    {
+      "default_path": "primary",
+      "pair_id": "bulk",
+      "paths": {
+        "alternative": [
+          "s1",
+          "s4",
+          "s6",
+          "s7",
+          "s8",
+          "s9",
+          "s10",
+          "s5"
+        ],
+        "primary": [
+          "s1",
+          "s2",
+          "s3",
+          "s5"
+        ]
+      },
+      "source_host": "h2",
+      "target_host": "h4"
+    }
+  ],
+  "schema_version": 1,
+  "switches": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10"
+  ],
+  "topology_id": "explainnet_10"
+}

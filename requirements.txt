@@ -1,0 +1,17 @@
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+shap==0.52.0
+networkx==3.7
+fastapi==0.142.2
+streamlit==1.65.0
+plotly==7.1.0
+pydantic==2.13.5
+PyYAML==6.0.3
+joblib==1.6.0
+psutil==7.2.2
+pyarrow==25.0.1
+pytest==9.1.1
+ruff==0.16.10
+uvicorn==0.54.0
+httpx==0.28.1

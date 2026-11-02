@@ -1,0 +1,22 @@
+# Final acceptance reconciliation
+
+Evidence cutoff UTC 2026-10-28T12:11:37.925354+00:00. **Overall verdict: blocked against the full review requirements.** Interface delivery is not research completion.
+
+| Requirement | Implementation | Test or experiment evidence | Achieved result | Limitation or blocker |
+|---|---|---|---|---|
+| Four declared faults | scenario_runtime.py; model_policy.py | Historical accepted72windows/class; current new class counts in cutoff | Partial | Healthy/fault generation exists; all-fault trained recovery is unqualified. |
+| Isolation Forest and Random Forest | model_training.py; model_bundle.py | Trusted active historical model; held-out60windows/10episodes | Implemented with limited measured domain | Fresh expanded-cohort training/evaluation blocked by incomplete corpus. |
+| Per-event SHAP | explanation_engine.py; explanation_service.py | Matching model/window/mode results; additivity and software lineage checks | Implemented | Each current incident needs its own ready explanation; saved counts are insufficient. |
+| Observable twin and measured fidelity | twin_spec.py; twin_service.py; twin_fidelity.py | Stage2 latency four passing C0 controls; Stage4 fresh outcome succeeded | Partial | Observation-based reconstruction with ambiguity, not a continuously exact physical clone. |
+| Two changing alternatives per fault plus C0 | recovery_spec.py; recovery_service.py | Stage2 latency12trials, two distinct reroutes and four C0 controls | Partial | Loss/saturation/QoS failed prerequisite measurement or fidelity; generation alone is not measured efficacy. |
+| Capacity respecting action families | recovery_spec.py; recovery_ranking.py | Reroute, fixed approved background shape and QoS restoration feasibility checks | Partial | No increase in physical link capacity; original actuation allowlist remains reroute only. |
+| 3000 to5000 accepted windows | completion_protocol.py; dataset_export.py | New 402/3600 windows; 67/600 episodes; historical360 separate | Unmet | Episode c3m_latency_f11_r06 exhausted both attempts at1/6 accepted steady windows. No target reduction, padding or third silent retry. |
+| Threshold comparison | evaluation.py | Historical rules40/48fault alerts versus combined48/48; both0/12healthy alerts | Limited historical evidence | New representative-cohort confirmation remains pending. |
+| Independent no twin baseline | completion_baselines.py; completion_stage3_labs.py | Independent proposal path and predeclared3sources/approach; new native comparison not executed | Pending | Historical qualified fixed-rule runs also used shadow twin qualification and are not a pure no-twin timing experiment. |
+| No XAI ablation | completion_evaluation.py | Toy software evaluator verifies unchanged fixed-model predictions when post-hoc SHAP is omitted | Pending measured result | SHAP is post-hoc; do not invent an accuracy difference or user-study utility. |
+| 5 10 15 switch benchmarks | scale_definition; completion_stage3_labs.py | Historical construction/connectivity measurements at all sizes; API template checks passed | Partial | Three independent new healthy/fault sources per size are unexecuted; larger-topology model transfer unqualified. |
+| Macro F1 at least0.85 | evaluation.py | Historical1.000 on60windows/10episodes; new heldout unopened | Unverified on representative cohort | One historical heldout family/class cannot establish broader generalization. |
+| Integrated decision below10seconds | workflow_service.py; completion_evaluation.py | Historical minute-scale workflows; fresh clocks retained separately | Unmet | Inference milliseconds are not complete detection/reconstruction/candidate decision time. |
+| Reproducibility and final deliverables | scripts/app.py; protocol/checkpoints; current-edition package | Same-machine launcher, raw records, manifests, report/deck/PDF/script/viva/index | Delivered with limitations | Clean-machine restoration and cross-machine compatibility were not demonstrated. |
+| Later assisted and auto laboratory extension | workflow_service.py; lab_runtime.py | Stage2 trained assisted and conditional auto latency succeeded then Undo; Stage4 records explicit outcomes | Conditionally qualified | Ownership, support, SHAP, freshness, C0, protected traffic and rollback remain enforced. Automatic repair disabled at handover. |
+| Production automatic remediation | Project scope | No physical/external network actuation | Outside original scope | Not implemented or claimed by these emulated-laboratory results. |

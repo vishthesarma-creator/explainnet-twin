@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "explainnet-twin"
+version = "0.14.0"
+description = "ExplainNet Twin local laboratory foundation"
+requires-python = ">=3.14"
+dependencies = ["fastapi==0.142.2", "pydantic==2.13.5", "PyYAML==6.0.3", "uvicorn==0.54.0",
+    "scikit-learn==1.9.1", "numpy==2.5.3", "scipy==1.18.1", "joblib==1.6.0", "shap==0.52.0",
+    "streamlit==1.65.0", "plotly==7.1.0", "networkx==3.7", "pandas==3.0.6"]
+
+[project.scripts]
+explainnet = "explainnet.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110

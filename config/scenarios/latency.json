@@ -1,0 +1,12 @@
+{
+    "schema_version":  1,
+    "config_version":  "pilot_v1",
+    "kind":  "latency",
+    "severity":  "medium",
+    "warmup_s":  2,
+    "measurement_s":  8,
+    "bidirectional":  false,
+    "variation_ms":  0,
+    "high_utilization":  false,
+    "traffic_profile":  "moderate"
+}

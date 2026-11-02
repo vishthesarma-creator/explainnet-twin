@@ -1,0 +1,12 @@
+{
+  "version": "critical_service_v2",
+  "declared_critical_class": {
+    "max_rtt_ms": 20,
+    "max_loss_fraction": 0.02,
+    "max_jitter_ms": 5,
+    "minimum_delivered_fraction": 0.9
+  },
+  "rtt_metric": "rtt_p95_ms",
+  "source": "recovery_v1 pre-existing declaration; never injection dependent",
+  "application_objective": "may tighten but not relax the critical class"
+}

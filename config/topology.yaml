@@ -1,0 +1,33 @@
+schema_version: 1
+config_version: pilot_v1
+topology_id: explainnet_five
+address_pool: 10.80.0.0/16
+switches: [s1, s2, s3, s4, s5]
+hosts:
+  - {host_id: h1, switch_id: s1, address_offset: 1, role: critical_client, access_bps: 100000000, access_delay_ms: 0}
+  - {host_id: h2, switch_id: s1, address_offset: 2, role: bulk_client, access_bps: 100000000, access_delay_ms: 0}
+  - {host_id: h3, switch_id: s5, address_offset: 3, role: critical_receiver, access_bps: 100000000, access_delay_ms: 0}
+  - {host_id: h4, switch_id: s5, address_offset: 4, role: bulk_receiver, access_bps: 100000000, access_delay_ms: 0}
+  - {host_id: h5, switch_id: s2, address_offset: 5, role: background_sender, access_bps: 100000000, access_delay_ms: 0}
+  - {host_id: h6, switch_id: s3, address_offset: 6, role: background_receiver, access_bps: 100000000, access_delay_ms: 0}
+links:
+  - {source: s1, target: s2, forward_bps: 100000000, reverse_bps: 100000000, forward_delay_ms: 1, reverse_delay_ms: 1}
+  - {source: s2, target: s3, forward_bps: 100000000, reverse_bps: 100000000, forward_delay_ms: 1, reverse_delay_ms: 1}
+  - {source: s3, target: s5, forward_bps: 20000000, reverse_bps: 20000000, forward_delay_ms: 1, reverse_delay_ms: 1}
+  - {source: s1, target: s4, forward_bps: 100000000, reverse_bps: 100000000, forward_delay_ms: 1, reverse_delay_ms: 1}
+  - {source: s4, target: s5, forward_bps: 30000000, reverse_bps: 30000000, forward_delay_ms: 1, reverse_delay_ms: 1}
+pairs:
+  - pair_id: critical
+    source_host: h1
+    target_host: h3
+    default_path: primary
+    paths:
+      primary: [s1, s2, s3, s5]
+      alternative: [s1, s4, s5]
+  - pair_id: bulk
+    source_host: h2
+    target_host: h4
+    default_path: primary
+    paths:
+      primary: [s1, s2, s3, s5]
+      alternative: [s1, s4, s5]

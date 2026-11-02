@@ -1,0 +1,7 @@
+schema_version: 1
+config_version: healthy_v1
+profiles:
+  - {schema_version: 1, profile_id: critical, source_host: h1, target_host: h3, protocol: udp, offered_bps: 2000000, duration_s: 4, packet_size: 1200}
+  - {schema_version: 1, profile_id: bulk, source_host: h2, target_host: h4, protocol: tcp, offered_bps: 5000000, duration_s: 4, packet_size: null}
+optional_background:
+  {schema_version: 1, profile_id: background, source_host: h5, target_host: h6, protocol: tcp, offered_bps: 1000000, duration_s: 4, packet_size: null}
